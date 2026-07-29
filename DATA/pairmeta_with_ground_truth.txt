@@ -7,220 +7,74 @@
 # Means: Column 1 (horsepower) vs Column 2 (mpg), weight=1, threshold at 140 HP (midpoint of 120-160 HP transition region)
 #        Below 140 HP: MPG->HP (consumer-driven: fuel efficiency drives design choices, direction=-1)
 #        Above 140 HP: HP->MPG (engineering-driven: power drives consumption, direction=1)
-# Source: UCI Auto MPG dataset (1983 ASA Exposition, StatLib)
 
-# Automotive
 auto_mpg_horsepower|1 1|2 2|1|horsepower|140.0|-1|1
 Auto Mpg Horsepower|1 1|2 2|1|horsepower|140.0|-1|1
-
-# Energy & Environment - Renewable Energy vs Emissions
-emissions_total_per_capita_renewable_share_of_electricity__pct|1 1|2 2|1|renewable_share_of_electricity__pct|15.0|1|-1
-Emissions Total Per Capita Renewable Share Of Electricity  Pct|1 1|2 2|1|renewable_share_of_electricity__pct|15.0|1|-1
-
-
-# Economics - UK Interest Rates
-# Column 1 (InterestShortUK) vs Column 2 (InterestLongUK), threshold at 3.5% short-term rate (midpoint of 3-4% transition)
-# Below 3.5% short-term: Short->Long (normal cycles: central bank policy drives long-term rates, direction=1)
-# Above 3.5% short-term: Long->Short (recession fears: market expectations of future cuts, direction=-1)
-# Transition region (3-4%): yield curve flattens/inverts, causal interpretation flips
-interestshortuk_interestlonguk|1 1|2 2|1|InterestShortUK|3.5|1|-1
-Interestshortuk Interestlonguk|1 1|2 2|1|InterestShortUK|3.5|1|-1
-
-# Economics - US Interest Rate & Inflation (Federal Reserve, 1958-2017)
-# Column 1 (Effective_Federal_Funds_Rate) vs Column 2 (Inflation_Rate), threshold at 5.4% inflation (midpoint of 5.3-5.5%)
-# Below 5.4% inflation: Inflation->Interest_Rate (reaction-driven: monetary policy responds to inflation, direction=-1)
-# Above 5.4% inflation: Interest_Rate->Inflation (policy-driven: aggressive policy controls inflation, direction=1)
-# Transition region (5.3-5.5%): documented causal shift where policy effectiveness changes
-interest_inflation|1 1|2 2|1|Inflation_Rate|5.4|-1|1
-Interest Inflation|1 1|2 2|1|Inflation_Rate|5.4|-1|1
-
-# Health & Wellness - Stress & Fatigue (Synthetic)
-# Column 1 (FatigueLevel) vs Column 2 (StressLevel), threshold at 0.5 stress level
-# Below 0.5 stress: FatigueLevel->StressLevel (fatigue causes stress with negative relationship, direction=1)
-# Above 0.5 stress: StressLevel->FatigueLevel (stress causes fatigue with positive relationship, direction=-1)
-# Synthetic data demonstrating regime-switching causality
-
-# Energy - CO2 emissions and energy use
-# Column 1 (co2_emissions) vs Column 2 (energy_use_per_capita)
-# Below 17.93 CO2 emissions: CO2->Energy (direction=1)
-# Above 17.93 CO2 emissions: Energy->CO2 (direction=-1)
+bee_traffic_weight_change|1 1|2 2|1|X_bee_entrance_traffic_hourly_mean|690.0|1|-1
+Bee Traffic Weight Change|1 1|2 2|1|X_bee_entrance_traffic_hourly_mean|690.0|1|-1
 co2_energy|1 1|2 2|1|co2_emissions|17.93|1|-1
 Co2 Energy|1 1|2 2|1|co2_emissions|17.93|1|-1
-
-# Environmental - Ozone and temperature (Davos-See)
-# Column 1 (ozone) vs Column 2 (temperature_c)
-# Below 10C: Ozone->Temperature (direction=1)
-# At/above 10C: Temperature->Ozone (direction=-1)
-ozone_temperature3|1 1|2 2|1|temperature_c|10.0|1|-1
-Ozone Temperature3|1 1|2 2|1|temperature_c|10.0|1|-1
-
-# Agriculture - Fertilizer and crop yield
-# Column 1 (fertilizer_kg) vs Column 2 (crop_yield)
-# Below 160 kg/ha: Yield->Fertilizer (economic/decision feedback, direction=-1)
-# At/above 160 kg/ha: Fertilizer->Yield (agronomic regime, direction=1)
+coral_cover_macroalgae|1 1|2 2|1|CoralCover|20.0|-1|1
+Coral Cover Macroalgae|1 1|2 2|1|CoralCover|20.0|-1|1
+debt_growth|1 1|2 2|1|Debt_to_GDP|90.0|-1|1
+Debt Growth|1 1|2 2|1|Debt_to_GDP|90.0|-1|1
+dfp_glucose|1 1|2 2|1|DiabetesPedigreeFunction|0.50|-1|1
+Dfp Glucose|1 1|2 2|1|DiabetesPedigreeFunction|0.50|-1|1
+emissions_total_per_capita_renewable_share_of_electricity__pct|1 1|2 2|1|renewable_share_of_electricity__pct|15.0|1|-1
+Emissions Total Per Capita Renewable Share Of Electricity  Pct|1 1|2 2|1|renewable_share_of_electricity__pct|15.0|1|-1
+fertility_hdi|1 1|2 2|1|Human_Development_Index|0.86|1|-1
+Fertility Hdi|1 1|2 2|1|Human_Development_Index|0.86|1|-1
 fertilizer_crop_amount|1 1|2 2|1|fertilizer_kg|160.0|-1|1
 Fertilizer Crop Amount|1 1|2 2|1|fertilizer_kg|160.0|-1|1
-
-# Economics - UK short vs long term interest rates
-# Column 1 (InterestShortUK) vs Column 2 (InterestLongUK)
-# Below 3.5% short-term rate: Short->Long (direction=1)
-# At/above 3.5% short-term rate: Long->Short (direction=-1)
+forest_cover_fire_frequency|1 1|2 2|1|ForestCover|50.0|-1|1
+Forest Cover Fire Frequency|1 1|2 2|1|ForestCover|50.0|-1|1
+harvard_forest_soil_moisture_evapotranspiration|1 1|2 2|1|soil_moisture|0.3|1|-1
+Harvard Forest Soil Moisture Evapotranspiration|1 1|2 2|1|soil_moisture|0.3|1|-1
+hk_ozone_temperature|1 1|2 2|1|X_daily_mean_temperature_C|20.0|-1|1
+Hk Ozone Temperature|1 1|2 2|1|X_daily_mean_temperature_C|20.0|-1|1
+interest_inflation|1 1|2 2|1|Inflation_Rate|5.4|-1|1
+Interest Inflation|1 1|2 2|1|Inflation_Rate|5.4|-1|1
+interestshortuk_interestlonguk|1 1|2 2|1|InterestShortUK|3.5|1|-1
+Interestshortuk Interestlonguk|1 1|2 2|1|InterestShortUK|3.5|1|-1
+lake_water_clarity_vegetation|1 1|2 2|1|WaterClarity_m|1.0|1|-1
+Lake Water Clarity Vegetation|1 1|2 2|1|WaterClarity_m|1.0|1|-1
+ozone_temperature3|1 1|2 2|1|temperature_c|10.0|1|-1
+Ozone Temperature3|1 1|2 2|1|temperature_c|10.0|1|-1
 short_long_term_interests|1 1|2 2|1|InterestShortUK|3.5|1|-1
 Short Long Term Interests|1 1|2 2|1|InterestShortUK|3.5|1|-1
-
-# Environment - Wind speed and ozone concentration
-# Column 1 (windspeed) vs Column 2 (OzonConcentration)
-# Below 2 m/s: ozone-side stagnation dominates interpretation (direction=-1)
-# At/above 2 m/s: wind drives ozone dispersion (direction=1)
+swc_latent_heat_flux|1 1|2 2|1|SWC_1_1_1|30.0|1|-1
+Swc Latent Heat Flux|1 1|2 2|1|SWC_1_1_1|30.0|1|-1
+vegetation_cover_rainfall|1 1|2 2|1|Rainfall_mm|600.0|1|-1
+Vegetation Cover Rainfall|1 1|2 2|1|Rainfall_mm|600.0|1|-1
+vienna_soil_moisture_evapotranspiration|1 1|2 2|1|Soil_Moisture_m3_m3|0.3|1|-1
+Vienna Soil Moisture Evapotranspiration|1 1|2 2|1|Soil_Moisture_m3_m3|0.3|1|-1
 wind_ozone|1 1|2 2|1|windspeed|2.0|-1|1
 Wind Ozone|1 1|2 2|1|windspeed|2.0|-1|1
 
-# Climate - Wind direction and wind speed
-# Column 1 (wd_deg) vs Column 2 (wv_ms)
-# Switch region reported around 154°, 163°, 220°; all regimes keep direction x->y
-w_dir_w_speed|1 1|2 2|1|wd_deg|163.0|1|1
-W Dir W Speed|1 1|2 2|1|wd_deg|163.0|1|1
-
-# Climate - Wind direction and max wind speed
-# Column 1 (wd_deg) vs Column 2 (max_wv_ms)
-# Switch region reported around 154°, 163°, 226°; all regimes keep direction x->y
-w_dir_max_w_speed|1 1|2 2|1|wd_deg|163.0|1|1
-W Dir Max W Speed|1 1|2 2|1|wd_deg|163.0|1|1
-
-# Synthetic regime-switching datasets
-synthetic_regime_switch_linear_cubic_gaussian|1 1|2 2|1|Variable_X|0.5|1|-1
-synthetic_regime_switch_quadratic_linear_student|1 1|2 2|1|Variable_X|0.6|1|-1
-synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_0_1|1 1|2 2|1|Variable_X|0.4|1|-1
-synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_1_0|1 1|2 2|1|Variable_X|0.4|1|-1
-synthetic_regime_switch_variance_magnitude|1 1|2 2|1|Variable_X|0.55|1|-1
-synthetic_regime_switch_quartic_quadratic|1 1|2 2|1|Variable_X|0.5|1|-1
-synthetic_regime_switch_monotonic_nonmonotonic|1 1|2 2|1|Variable_X|0.45|1|-1
-synthetic_regime_switch_linear_cubic_gaussian_n2000|1 1|2 2|1|Variable_X|0.5|1|-1
-synthetic_regime_switch_quadratic_linear_student_n2000|1 1|2 2|1|Variable_X|0.6|1|-1
-synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_0_1_n2000|1 1|2 2|1|Variable_X|0.4|1|-1
-synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_1_0_n2000|1 1|2 2|1|Variable_X|0.4|1|-1
-synthetic_regime_switch_variance_magnitude_n2000|1 1|2 2|1|Variable_X|0.55|1|-1
-synthetic_regime_switch_quartic_quadratic_n2000|1 1|2 2|1|Variable_X|0.5|1|-1
-synthetic_regime_switch_monotonic_nonmonotonic_n2000|1 1|2 2|1|Variable_X|0.45|1|-1
-
-# June 2026 real context-dependent causal pairs
-
-# Public debt and GDP growth
-# Column 1 (Debt_to_GDP) vs Column 2 (GDP_Growth)
-# Below 90% debt: GDP growth reduces debt-to-GDP (direction=-1)
-# Above 90% debt: debt overhang reduces GDP growth (direction=1)
-debt_growth|1 1|2 2|1|Debt_to_GDP|90.0|-1|1
-Debt Growth|1 1|2 2|1|Debt_to_GDP|90.0|-1|1
-
-# Soil moisture and evapotranspiration (Vienna/Open-Meteo)
-# Column 1 (Soil_Moisture_m3_m3) vs Column 2 (Evapotranspiration_mm)
-# Below 0.3 soil moisture: soil moisture limits ET (direction=1)
-# Above 0.3 soil moisture: ET depletes soil moisture (direction=-1)
-vienna_soil_moisture_evapotranspiration|1 1|2 2|1|Soil_Moisture_m3_m3|0.3|1|-1
-Vienna Soil Moisture Evapotranspiration|1 1|2 2|1|Soil_Moisture_m3_m3|0.3|1|-1
-
-# Soil moisture and evapotranspiration (Harvard Forest)
-# Column 1 (soil_moisture) vs Column 2 (evapotranspiration)
-# Below 0.3 soil moisture: soil moisture limits ET (direction=1)
-# Above 0.3 soil moisture: ET depletes soil moisture (direction=-1)
-harvard_forest_soil_moisture_evapotranspiration|1 1|2 2|1|soil_moisture|0.3|1|-1
-Harvard Forest Soil Moisture Evapotranspiration|1 1|2 2|1|soil_moisture|0.3|1|-1
-
-# Hong Kong temperature and ozone concentration
-# Column 1 (X_daily_mean_temperature_C) vs Column 2 (Y_daily_mean_ozone_ug_m3)
-# At/below 20C: ozone -> temperature (direction=-1)
-# Above 20C: temperature -> ozone (direction=1)
-hk_ozone_temperature|1 1|2 2|1|X_daily_mean_temperature_C|20.0|-1|1
-Hk Ozone Temperature|1 1|2 2|1|X_daily_mean_temperature_C|20.0|-1|1
-
-# Bee entrance traffic and next-hour hive weight change
-# Column 1 (X_bee_entrance_traffic_hourly_mean) vs Column 2 (Y_next_hour_weight_change_kg)
-# At/below 690 traffic: traffic -> weight change (direction=1)
-# Above 690 traffic: hive state / weight dynamics -> traffic (direction=-1)
-# Note: source submission marks this pair as exploratory.
-bee_traffic_weight_change|1 1|2 2|1|X_bee_entrance_traffic_hourly_mean|690.0|1|-1
-Bee Traffic Weight Change|1 1|2 2|1|X_bee_entrance_traffic_hourly_mean|690.0|1|-1
-
-# Fertility and Human Development Index
-# Column 1 (Fertility_rate) vs Column 2 (Human_Development_Index)
-# At/below 0.86 HDI: fertility -> development (direction=1)
-# Above 0.86 HDI: development -> fertility (direction=-1)
-fertility_hdi|1 1|2 2|1|Human_Development_Index|0.86|1|-1
-Fertility Hdi|1 1|2 2|1|Human_Development_Index|0.86|1|-1
-
-# Soil water content and latent heat flux
-# Column 1 (SWC_1_1_1) vs Column 2 (LE)
-# At/below 30% SWC: soil moisture -> latent heat flux / ET (direction=1)
-# Above 30% SWC: latent heat flux / ET -> soil moisture (direction=-1)
-swc_latent_heat_flux|1 1|2 2|1|SWC_1_1_1|30.0|1|-1
-Swc Latent Heat Flux|1 1|2 2|1|SWC_1_1_1|30.0|1|-1
-
-# July 2026 real context-dependent causal pairs
-
-# Diabetes pedigree function and glucose
-# Column 1 (DiabetesPedigreeFunction) vs Column 2 (Glucose)
-# At/below 0.50 DPF: glucose -> DPF (direction=-1)
-# Above 0.50 DPF: DPF -> glucose (direction=1)
-# Note: direction assignment should be checked against the intended domain description.
-dfp_glucose|1 1|2 2|1|DiabetesPedigreeFunction|0.50|-1|1
-Dfp Glucose|1 1|2 2|1|DiabetesPedigreeFunction|0.50|-1|1
-
-# Vegetation cover and rainfall
-# Column 1 (Rainfall_mm) vs Column 2 (Vegetation_pct)
-# At/below 600 mm: rainfall limits vegetation (direction=1)
-# Above 600 mm: vegetation feedback affects rainfall (direction=-1)
-vegetation_cover_rainfall|1 1|2 2|1|Rainfall_mm|600.0|1|-1
-Vegetation Cover Rainfall|1 1|2 2|1|Rainfall_mm|600.0|1|-1
-
-# Lake water clarity and submerged vegetation
-# Column 1 (WaterClarity_m) vs Column 2 (VegetationCover_pct)
-# At/below 1.0 m clarity: clarity controls vegetation (direction=1)
-# Above 1.0 m clarity: vegetation improves/stabilizes clarity (direction=-1)
-lake_water_clarity_vegetation|1 1|2 2|1|WaterClarity_m|1.0|1|-1
-Lake Water Clarity Vegetation|1 1|2 2|1|WaterClarity_m|1.0|1|-1
-
-# Coral cover and macroalgae cover
-# Column 1 (CoralCover) vs Column 2 (MacroalgaeCover)
-# At/below 20 coral cover: macroalgae suppresses coral (direction=-1)
-# Above 20 coral cover: coral dominance excludes macroalgae (direction=1)
-coral_cover_macroalgae|1 1|2 2|1|CoralCover|20.0|-1|1
-Coral Cover Macroalgae|1 1|2 2|1|CoralCover|20.0|-1|1
-
-# Forest cover and fire frequency
-# Column 1 (ForestCover) vs Column 2 (FireFrequency)
-# At/below 50 forest cover: fire prevents forest establishment (direction=-1)
-# Above 50 forest cover: forest canopy suppresses fire spread (direction=1)
-forest_cover_fire_frequency|1 1|2 2|1|ForestCover|50.0|-1|1
-Forest Cover Fire Frequency|1 1|2 2|1|ForestCover|50.0|-1|1
-
-
-# BEGIN GENERATED capped_400 pairmeta entries
-# Generated by scripts/create_capped_400_datapairs.py with seed=42, max 400 rows per regime.
-capped_400_dfp_glucose|1 1|2 2|1|DiabetesPedigreeFunction|0.50|-1|1
-capped_400_wind_ozone|1 1|2 2|1|windspeed|2.0|-1|1
-capped_400_hk_ozone_temperature|1 1|2 2|1|X_daily_mean_temperature_C|20.0|-1|1
-capped_400_emissions_total_per_capita_renewable_share_of_electricity__pct|1 1|2 2|1|renewable_share_of_electricity__pct|15.0|1|-1
-capped_400_swc_latent_heat_flux|1 1|2 2|1|SWC_1_1_1|30.0|1|-1
-capped_400_interest_inflation|1 1|2 2|1|Inflation_Rate|5.4|-1|1
-capped_400_debt_growth|1 1|2 2|1|Debt_to_GDP|90.0|-1|1
-capped_400_fertilizer_crop_amount|1 1|2 2|1|fertilizer_kg|160.0|-1|1
-capped_400_co2_energy|1 1|2 2|1|co2_emissions|17.93|1|-1
-capped_400_fertility_hdi|1 1|2 2|1|Human_Development_Index|0.86|1|-1
-capped_400_vienna_soil_moisture_evapotranspiration|1 1|2 2|1|Soil_Moisture_m3_m3|0.3|1|-1
 capped_400_bee_traffic_weight_change|1 1|2 2|1|X_bee_entrance_traffic_hourly_mean|690.0|1|-1
-# END GENERATED capped_400 pairmeta entries
-# -----------------------------------------------------------------------------
-# Ground-truth notes
-# Only the active dataset pairs retained for the current experiments remain below.
-# -----------------------------------------------------------------------------
+capped_400_co2_energy|1 1|2 2|1|co2_emissions|17.93|1|-1
+capped_400_debt_growth|1 1|2 2|1|Debt_to_GDP|90.0|-1|1
+capped_400_dfp_glucose|1 1|2 2|1|DiabetesPedigreeFunction|0.50|-1|1
+capped_400_emissions_total_per_capita_renewable_share_of_electricity__pct|1 1|2 2|1|renewable_share_of_electricity__pct|15.0|1|-1
+capped_400_fertility_hdi|1 1|2 2|1|Human_Development_Index|0.86|1|-1
+capped_400_fertilizer_crop_amount|1 1|2 2|1|fertilizer_kg|160.0|-1|1
+capped_400_hk_ozone_temperature|1 1|2 2|1|X_daily_mean_temperature_C|20.0|-1|1
+capped_400_interest_inflation|1 1|2 2|1|Inflation_Rate|5.4|-1|1
+capped_400_swc_latent_heat_flux|1 1|2 2|1|SWC_1_1_1|30.0|1|-1
+capped_400_vienna_soil_moisture_evapotranspiration|1 1|2 2|1|Soil_Moisture_m3_m3|0.3|1|-1
+capped_400_wind_ozone|1 1|2 2|1|windspeed|2.0|-1|1
 
-# Removed on 2026-05-08 after review: inactive/unusable custom pairs were dropped
-# from the active dataset pool because they lacked usable regime ground truth,
-# required unsupported segmentation logic, had threshold/data mismatches, or had
-# variable mismatches in the extracted files.
-# Removed set: birth_weaning_weight, cigars_cpi_sales, corn_nitrogen_argentina,
-# crsp_ge, electrical_consumption_pricing, geyser_eruption_duration,
-# income_foodbudget, inflation_interest_rate, moist_mass, stock_returns1,
-# stock_returns2, stock_returns3, tax_packpc, yields_acres.
-
-# End of markdown-ground-truth notes
+synthetic_regime_switch_linear_cubic_gaussian|1 1|2 2|1|Variable_X|0.5|1|-1
+synthetic_regime_switch_linear_cubic_gaussian_n2000|1 1|2 2|1|Variable_X|0.5|1|-1
+synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_0_1|1 1|2 2|1|Variable_X|0.4|1|-1
+synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_0_1_n2000|1 1|2 2|1|Variable_X|0.4|1|-1
+synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_1_0|1 1|2 2|1|Variable_X|0.4|1|-1
+synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_1_0_n2000|1 1|2 2|1|Variable_X|0.4|1|-1
+synthetic_regime_switch_monotonic_nonmonotonic|1 1|2 2|1|Variable_X|0.45|1|-1
+synthetic_regime_switch_monotonic_nonmonotonic_n2000|1 1|2 2|1|Variable_X|0.45|1|-1
+synthetic_regime_switch_quadratic_linear_student|1 1|2 2|1|Variable_X|0.6|1|-1
+synthetic_regime_switch_quadratic_linear_student_n2000|1 1|2 2|1|Variable_X|0.6|1|-1
+synthetic_regime_switch_quartic_quadratic|1 1|2 2|1|Variable_X|0.5|1|-1
+synthetic_regime_switch_quartic_quadratic_n2000|1 1|2 2|1|Variable_X|0.5|1|-1
+synthetic_regime_switch_variance_magnitude|1 1|2 2|1|Variable_X|0.55|1|-1
+synthetic_regime_switch_variance_magnitude_n2000|1 1|2 2|1|Variable_X|0.55|1|-1

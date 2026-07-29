@@ -1,36 +1,31 @@
-==================================================================================================================================================
-Cause-effect is a growing database with two-variable cause-effect pairs 
-created at Max-Planck-Institute for Biological Cybernetics in Tuebingen, Germany.
-==================================================================================================================================================
+# Datasets
 
-Some pairs are highdimensional, for machine readability the relevant information about this is coded in Meta-data.
+This folder contains the processed bivariate cause-effect pairs used in the
+experiments, together with their regime metadata.
 
-Meta-data contains the following information:
+## Contents
 
-number of pair | 1st column of cause | last column of cause | 1st column of effect | last column of effect | dataset weight
+- custom_pairs/
+  Bivariate datasets used by the app. Each file holds two numeric columns
+  (the variable pair). Files prefixed with "capped_400_" are sample-capped
+  variants (up to 400 rows per regime) used for the fair-comparison
+  experiments with LLMs.
 
-The dataset weight should be used for calculating average performance of causal inference methods
-to avoid a bias introduced by having multiple copies of essentially the same data (for example,
-the pairs 56-63).
+- pairmeta_with_ground_truth.txt
+  Regime and ground-truth metadata for every pair. Each row specifies the
+  dataset identifier, the cause/effect column indices, a dataset weight, the
+  threshold variable, the threshold value, and the ground-truth causal
+  direction in the low and high regime.
+  Direction codes: 1 means X->Y (cause->effect), -1 means Y->X.
+  The low regime contains observations at or below the threshold; the high
+  regime contains observations above it.
 
-When you use this data set in a publication, please cite the following paper (which
-also contains much more detailed information regarding this data set in the supplement):
+- datasets.py
+  Loading helpers used by the application.
 
-J. M. Mooij, J. Peters, D. Janzing, J. Zscheischler, B. Schoelkopf
-"Distinguishing cause from effect using observational data: methods and benchmarks"
-Journal of Machine Learning Research 17(32):1-102, 2016
+## Documentation
 
-NOTE: pair0001 - pair0041 are taken from the UCI Machine Learning Repository:
-
-Asuncion, A. & Newman, D.J. (2007). UCI Machine Learning Repository [http://www.ics.uci.edu/~mlearn/MLRepository.html]. Irvine, CA: University of California, School of Information and Computer Science. 
-
-==================================================================================================================================================
-Overview over all data pairs..
-
-			var 1				var 2					dataset			ground truth
-
-pair0049		Ozone concentration		Temperature				Bafu			<-
-pair0050		Ozone concentration		Temperature				Bafu			<-
-pair0051		Ozone concentration		Temperature				Bafu			<-
-pair0077		Temperature			Solar radiation				B. Janzing       	<-
-pair0087		Temperature			Total snow				http://www.mldata.org/repository/data/viewslug/whistler-daily-snowfall/		->
+Detailed descriptions of each dataset, including the data sources, the domain
+literature used to fix the regime thresholds, and the ground-truth causal
+directions within each regime, are provided in the technical supplement
+(technical_supplement.tex), in the section "Dataset Descriptions".
