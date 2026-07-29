@@ -1,24 +1,31 @@
-# Causal Inference Explorer
+# CODE AND DATA SUPPLEMENT
 
-This repository contains the anonymous code package for the paper submission. It provides a Streamlit/FastAPI app for evaluating causal-direction changes in bivariate datasets with two regimes. The app compares LLM-based causal reasoning with data-driven causal discovery methods.
+Can LLMs Rival Data-Driven Methods in Causal Discovery?
+A Systematic Comparative Framework
 
-## What Is Included
+This archive contains the implementation, the processed benchmark datasets,
+the data-driven baselines, the LLM prompt-chain code, and selected committed
+result files used for the submission. It is self-contained for inspecting the
+datasets, running the data-driven causal-discovery baselines, and reproducing
+the LLM experiments reported in the paper. The application provides a
+Streamlit/FastAPI interface for evaluating regime-dependent causal-direction
+changes in bivariate datasets with two regimes, comparing LLM-based causal
+reasoning against data-driven causal discovery methods (ROCHE, LOCI, LCUBE,
+and LiNGAM).
 
-- Processed bivariate datasets and metadata in `DATA/`
-- Streamlit/FastAPI application code in `app/`
-- Implementations/wrappers for ROCHE, LOCI, LCUBE, and LiNGAM baselines
-- Batch experiment panels and result-export utilities
-- Prompt-chain code for LLM experiments
-- Docker files for reproducible local execution
-- Selected saved CSV outputs used during development and validation
+Raw third-party source-material folders, caches, local API keys, and
+author-identifying files are not redistributed.
 
-Raw source-material folders, caches, local API keys, and author-identifying files are not included.
 
-## Quick Start
+## QUICK START
+
+The reported results use Docker for a reproducible environment (Python 3.10
+inside the image). From this directory:
 
 ### 1. Configure The API Key
 
-LLM runs use OpenRouter. Classical causal-method runs and dataset inspection do not need an API key.
+LLM runs use OpenRouter. Running the data-driven baselines and inspecting the
+datasets does not require an API key.
 
 ```bash
 cp .env.template .env
@@ -52,9 +59,29 @@ Visit:
 http://localhost:8501
 ```
 
-The FastAPI backend is exposed inside the Docker setup and is used by the Streamlit interface.
+The FastAPI backend is exposed inside the Docker setup and is used by the
+Streamlit interface.
 
-## Main Workflows
+
+## CONTENTS
+
+```text
+app/                  Streamlit/FastAPI application (UI panels, API, utils)
+DATA/                 Processed bivariate datasets and pair metadata
+LCUBE/                LCUBE implementation/wrapper
+LINGAM/               LiNGAM wrapper
+LOCI/                 LOCI implementation/wrapper
+ROCHE/                ROCHE implementation/wrapper
+helpers/              Shared segmentation and optimization utilities
+scripts/              Dataset-generation and sample-capping scripts
+results/              Output folders and selected committed CSV outputs
+Dockerfile            Container definition (Python 3.10, CPU-only PyTorch)
+docker-compose.yml    Reproducible local execution
+requirements.runtime.txt  Runtime Python dependencies
+test_ground_truth.py  Ground-truth parser/evaluation validation script
+```
+
+## MAIN WORKFLOWS
 
 ### Inspect A Dataset
 
@@ -85,7 +112,7 @@ The LLM model and sampling configuration is in:
 app/utils/llm_config.py
 ```
 
-## Sampling Policy
+## SAMPLING POLICY
 
 For batch LLM experiments:
 
@@ -98,7 +125,57 @@ For batch LLM experiments:
 
 The row preview used by the UI is separate from the batch-experiment sampling path.
 
-## Repository Structure
+## DATA AND METADATA
+
+Dataset files live in:
+
+```text
+DATA/custom_pairs/
+```
+
+Ground-truth threshold and direction metadata lives in
+`DATA/pairmeta_with_ground_truth.txt`. Each metadata row specifies the dataset
+identifier, the cause/effect column indices, a dataset weight, the threshold
+variable, the threshold value, and the causal direction in the low and high
+regime.
+
+Detailed per-dataset descriptions (data sources, the domain literature used to
+fix each regime threshold, and the ground-truth causal directions) are given
+in the technical supplement, in the section "Dataset Descriptions".
+
+
+## REPRODUCING THE VALIDATION CHECK
+
+After building the Docker image, run:
+
+```bash
+docker compose exec causal-app python test_ground_truth.py
+```
+
+Expected outcome: the script completes without ground-truth lookup errors.
+
+
+## ENVIRONMENT VARIABLES
+
+| Variable | Required | Description |
+| --- | --- | --- |
+| `OPENROUTER_API_KEY` | Required for LLM runs | OpenRouter API key |
+| `OPENROUTER_HTTP_REFERER` | No | Optional HTTP referer header |
+| `OPENROUTER_X_TITLE` | No | Optional title header |
+
+
+## EXTERNAL METHODS
+
+This app uses or wraps the following causal-discovery methods for comparison.
+Raw third-party benchmark data is not redistributed and remains subject to the
+original terms of the sources cited in the paper.
+
+- LOCI, Location-Scale Noise Models: <https://github.com/AlexImmer/loci>
+- ROCHE, robust causal discovery with Student's t-distribution: <https://github.com/quangdzuytran/ROCHE>
+- LCUBE, MDL-based causal discovery with cubic splines: <https://arxiv.org/abs/2509.00538>
+- LiNGAM: <https://github.com/cdt15/lingam>
+
+## REPOSITORY STRUCTURE
 
 ```text
 .
@@ -121,49 +198,9 @@ The row preview used by the UI is separate from the batch-experiment sampling pa
 `-- test_ground_truth.py
 ```
 
-## Data And Metadata
 
-Dataset files live in:
+## NOTES FOR REVIEWERS
 
-```text
-DATA/custom_pairs/
-```
-
-Ground-truth threshold and direction metadata lives in:
-
-```text
-DATA/pairmeta_with_ground_truth.txt
-```
-
-Each metadata row specifies the dataset identifier, column indices, threshold variable, threshold value, and causal direction in each regime.
-
-## Reproducing The Validation Check
-
-After building the Docker image, run:
-
-```bash
-docker compose exec causal-app python test_ground_truth.py
-```
-
-Expected outcome: the script completes without ground-truth lookup errors.
-
-## Environment Variables
-
-| Variable | Required | Description |
-| --- | --- | --- |
-| `OPENROUTER_API_KEY` | Required for LLM runs | OpenRouter API key |
-| `OPENROUTER_HTTP_REFERER` | No | Optional HTTP referer header |
-| `OPENROUTER_X_TITLE` | No | Optional title header |
-
-## External Methods
-
-This app uses or wraps the following causal-discovery methods for comparison:
-
-- LOCI, Location-Scale Noise Models: <https://github.com/AlexImmer/loci>
-- ROCHE, robust causal discovery with Student's t-distribution: <https://github.com/quangdzuytran/ROCHE>
-- LCUBE, MDL-based causal discovery with cubic splines: <https://arxiv.org/abs/2509.00538>
-- LiNGAM: <https://github.com/cdt15/lingam>
-
-## Notes For Reviewers
-
-This package is intended for anonymous academic review. It contains processed datasets and runnable code, but no private API keys. LLM experiments require the reviewer to provide their own OpenRouter key.
+This package is intended for anonymous academic review. It contains processed
+datasets and runnable code, but no private API keys. LLM experiments require
+the reviewer to provide their own OpenRouter key.
