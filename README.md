@@ -175,30 +175,6 @@ original terms of the sources cited in the paper.
 - LCUBE, MDL-based causal discovery with cubic splines: <https://github.com/LCube-Alg/LCube>
 - LiNGAM: <https://github.com/cdt15/lingam>
 
-## REPOSITORY STRUCTURE
-
-```text
-.
-|-- app/                  # Streamlit/FastAPI application
-|   |-- api/              # API endpoints and task handling
-|   |-- components/       # UI panels
-|   `-- utils/            # Data loading, prompts, LLM client, scoring
-|-- DATA/                 # Processed datasets and pair metadata
-|   `-- custom_pairs/     # Bivariate pairs used by the app
-|-- LCUBE/                # LCUBE implementation/wrapper
-|-- LINGAM/               # LiNGAM wrapper
-|-- LOCI/                 # LOCI implementation/wrapper
-|-- ROCHE/                # ROCHE implementation/wrapper
-|-- helpers/              # Shared utilities
-|-- scripts/              # Dataset-generation and capping scripts
-|-- results/              # Output folders and selected CSV outputs
-|-- Dockerfile
-|-- docker-compose.yml
-|-- requirements.runtime.txt
-`-- test_ground_truth.py
-```
-
-
 ## NOTES FOR REVIEWERS
 
 This package is intended for anonymous academic review. It contains processed
