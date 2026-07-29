@@ -60,7 +60,7 @@ The FastAPI backend is exposed inside the Docker setup and is used by the Stream
 
 Use the dataset panel to select a pair. The app shows the bivariate data, the threshold variable, the threshold value, and the two resulting regimes.
 
-### Run Classical Causal Methods
+### Run Data-Driven Causal Methods
 
 Use the causal-analysis panel to run the available data-driven methods per regime. The app compares predicted causal direction against the ground-truth metadata in `DATA/pairmeta_with_ground_truth.txt`.
 
@@ -161,7 +161,7 @@ This app uses or wraps the following causal-discovery methods for comparison:
 
 - LOCI, Location-Scale Noise Models: <https://github.com/AlexImmer/loci>
 - ROCHE, robust causal discovery with Student's t-distribution: <https://github.com/quangdzuytran/ROCHE>
-- LCUBE, MDL-based causal discovery with cubic splines: <https://github.com/suzi216/LCUBE>
+- LCUBE, MDL-based causal discovery with cubic splines: <https://arxiv.org/abs/2509.00538>
 - LiNGAM: <https://github.com/cdt15/lingam>
 
 ## Notes For Reviewers
