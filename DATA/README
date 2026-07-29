@@ -1,0 +1,36 @@
+==================================================================================================================================================
+Cause-effect is a growing database with two-variable cause-effect pairs 
+created at Max-Planck-Institute for Biological Cybernetics in Tuebingen, Germany.
+==================================================================================================================================================
+
+Some pairs are highdimensional, for machine readability the relevant information about this is coded in Meta-data.
+
+Meta-data contains the following information:
+
+number of pair | 1st column of cause | last column of cause | 1st column of effect | last column of effect | dataset weight
+
+The dataset weight should be used for calculating average performance of causal inference methods
+to avoid a bias introduced by having multiple copies of essentially the same data (for example,
+the pairs 56-63).
+
+When you use this data set in a publication, please cite the following paper (which
+also contains much more detailed information regarding this data set in the supplement):
+
+J. M. Mooij, J. Peters, D. Janzing, J. Zscheischler, B. Schoelkopf
+"Distinguishing cause from effect using observational data: methods and benchmarks"
+Journal of Machine Learning Research 17(32):1-102, 2016
+
+NOTE: pair0001 - pair0041 are taken from the UCI Machine Learning Repository:
+
+Asuncion, A. & Newman, D.J. (2007). UCI Machine Learning Repository [http://www.ics.uci.edu/~mlearn/MLRepository.html]. Irvine, CA: University of California, School of Information and Computer Science. 
+
+==================================================================================================================================================
+Overview over all data pairs..
+
+			var 1				var 2					dataset			ground truth
+
+pair0049		Ozone concentration		Temperature				Bafu			<-
+pair0050		Ozone concentration		Temperature				Bafu			<-
+pair0051		Ozone concentration		Temperature				Bafu			<-
+pair0077		Temperature			Solar radiation				B. Janzing       	<-
+pair0087		Temperature			Total snow				http://www.mldata.org/repository/data/viewslug/whistler-daily-snowfall/		->

@@ -1,0 +1,8 @@
+﻿,Dataset,Has Ground Truth,Threshold,LLM Low,LLM High,LLM Acc
+0,synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_0_1,✓,Variable_X @ 0.40,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+1,synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_1_0,✓,Variable_X @ 0.40,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+2,synthetic_regime_switch_quadratic_linear_student,✓,Variable_X @ 0.60,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+3,synthetic_regime_switch_monotonic_nonmonotonic,✓,Variable_X @ 0.45,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+4,synthetic_regime_switch_quartic_quadratic,✓,Variable_X @ 0.50,Variable_Y->Variable_X (100%),Variable_X->Variable_Y (100%),0%
+5,synthetic_regime_switch_linear_cubic_gaussian,✓,Variable_X @ 0.50,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+6,synthetic_regime_switch_variance_magnitude,✓,Variable_X @ 0.55,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%

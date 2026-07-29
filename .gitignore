@@ -1,0 +1,57 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Project data and generated artifacts
+DATA/_old/
+DATA/ARCHIVE/
+DATA/new_data_extracted/
+DATA/custom_pairs/papers_and_files/
+results/
+!results/
+!results/causal/
+!results/clustering/
+!results/llm_responses/
+!results/causal/.gitkeep
+!results/clustering/.gitkeep
+!results/llm_responses/.gitkeep
+openai_usage.json
+*Zone.Identifier

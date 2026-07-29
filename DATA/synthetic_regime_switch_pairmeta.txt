@@ -1,0 +1,14 @@
+synthetic_regime_switch_linear_cubic_gaussian|Variable_X|Variable_Y|1.0|Variable_X|0.5|1|-1
+synthetic_regime_switch_quadratic_linear_student|Variable_X|Variable_Y|1.0|Variable_X|0.6|1|-1
+synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_0_1|Variable_X|Variable_Y|1.0|Variable_X|0.4|1|-1
+synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_1_0|Variable_X|Variable_Y|1.0|Variable_X|0.4|1|-1
+synthetic_regime_switch_variance_magnitude|Variable_X|Variable_Y|1.0|Variable_X|0.55|1|-1
+synthetic_regime_switch_quartic_quadratic|Variable_X|Variable_Y|1.0|Variable_X|0.5|1|-1
+synthetic_regime_switch_monotonic_nonmonotonic|Variable_X|Variable_Y|1.0|Variable_X|0.45|1|-1
+synthetic_regime_switch_linear_cubic_gaussian_n2000|Variable_X|Variable_Y|1.0|Variable_X|0.5|1|-1
+synthetic_regime_switch_quadratic_linear_student_n2000|Variable_X|Variable_Y|1.0|Variable_X|0.6|1|-1
+synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_0_1_n2000|Variable_X|Variable_Y|1.0|Variable_X|0.4|1|-1
+synthetic_regime_switch_linear_gaussian_to_linear_laplace_scale_1_0_n2000|Variable_X|Variable_Y|1.0|Variable_X|0.4|1|-1
+synthetic_regime_switch_variance_magnitude_n2000|Variable_X|Variable_Y|1.0|Variable_X|0.55|1|-1
+synthetic_regime_switch_quartic_quadratic_n2000|Variable_X|Variable_Y|1.0|Variable_X|0.5|1|-1
+synthetic_regime_switch_monotonic_nonmonotonic_n2000|Variable_X|Variable_Y|1.0|Variable_X|0.45|1|-1

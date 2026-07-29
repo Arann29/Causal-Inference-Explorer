@@ -1,0 +1,10 @@
+﻿,Dataset,Has Ground Truth,Threshold,LLM Low,LLM High,LLM Acc
+0,lake_water_clarity_vegetation,✓,WaterClarity_m @ 1.00,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+1,ozone_temperature3,✓,temperature_c @ 10.00,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+2,short_long_term_interests,✓,InterestShortUK @ 3.50,Variable_Y->Variable_X (100%),Variable_X->Variable_Y (100%),0%
+3,coral_cover_macroalgae,✓,CoralCover @ 20.00,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),0%
+4,vegetation_cover_rainfall,✓,Rainfall_mm @ 600.00,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+5,interestshortuk_interestlonguk,✓,InterestShortUK @ 3.50,Variable_Y->Variable_X (100%),Variable_X->Variable_Y (100%),0%
+6,forest_cover_fire_frequency,✓,ForestCover @ 50.00,Variable_X->Variable_Y (100%),Variable_X->Variable_Y (100%),50%
+7,chulkov_soil_moisture_evapotranspiration,✓,soil_moisture @ 0.26,Variable_Y->Variable_X (100%),Variable_X->Variable_Y (100%),0%
+8,auto_mpg_horsepower,✓,horsepower @ 140.00,Variable_X->Variable_Y (100%),Variable_X->Variable_Y (100%),50%

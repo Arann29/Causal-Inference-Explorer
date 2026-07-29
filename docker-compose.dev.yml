@@ -1,0 +1,15 @@
+# docker-compose.dev.yml - Development version
+# Note: Google Drive paths don't work well with Docker volume mounts on Windows
+# For development, just rebuild when you make changes (it's fast with Docker cache):
+#   docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+
+version: '3.8'
+
+services:
+  causal-app:
+    environment:
+      # Development-specific environment variables
+      - PYTHONPATH=/app:/app/helpers:/app/LOCI:/app/ROCHE:/app/DATA
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_HTTP_REFERER=${OPENROUTER_HTTP_REFERER:-http://localhost}
+      - OPENROUTER_X_TITLE=${OPENROUTER_X_TITLE:-Causal Inference Explorer}

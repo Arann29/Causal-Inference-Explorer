@@ -1,0 +1,21 @@
+# docker-compose.yml
+
+services:
+  causal-app:
+    build: .
+    ports:
+      - "${BIND_HOST:-127.0.0.1}:${STREAMLIT_HOST_PORT:-8501}:8501"  # Streamlit
+      - "${BIND_HOST:-127.0.0.1}:${FASTAPI_HOST_PORT:-8000}:8000"  # FastAPI
+    environment:
+      - PYTHONPATH=/app
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_HTTP_REFERER=${OPENROUTER_HTTP_REFERER:-http://localhost}
+      - OPENROUTER_X_TITLE=${OPENROUTER_X_TITLE:-Causal Inference Explorer}
+    env_file:
+      - .env
+    networks:
+      - causal-network
+
+networks:
+  causal-network:
+    driver: bridge

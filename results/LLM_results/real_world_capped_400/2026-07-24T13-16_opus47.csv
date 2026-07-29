@@ -1,0 +1,13 @@
+﻿,Dataset,Has Ground Truth,Threshold,LLM Low,LLM High,LLM Acc
+0,capped_400_wind_ozone,✓,windspeed @ 2.00,Variable_Y->Variable_X (100%),Variable_X->Variable_Y (100%),100%
+1,capped_400_co2_energy,✓,co2_emissions @ 17.93,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+2,capped_400_dfp_glucose,✓,DiabetesPedigreeFunction @ 0.50,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),0%
+3,capped_400_yurii_soil_moisture_evapotranspiration,✓,Soil_Moisture_m3_m3 @ 0.30,Variable_Y->Variable_X (100%),Variable_X->Variable_Y (100%),0%
+4,capped_400_hajek_hk_ozone_temperature,✓,X_daily_mean_temperature_C @ 20.00,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),0%
+5,capped_400_hajek_bee_traffic_weight_change,✓,X_bee_entrance_traffic_hourly_mean @ 690.00,Variable_X->Variable_Y (100%),Variable_X->Variable_Y (100%),50%
+6,capped_400_panainte_swc_latent_heat_flux,✓,SWC_1_1_1 @ 30.00,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+7,capped_400_emissions_total_per_capita_renewable_share_of_electricity__pct,✓,renewable_share_of_electricity__pct @ 15.00,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+8,capped_400_yurii_debt_growth,✓,Debt_to_GDP @ 90.00,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),0%
+9,capped_400_interest_inflation,✓,Inflation_Rate @ 5.40,Variable_Y->Variable_X (100%),Variable_X->Variable_Y (100%),100%
+10,capped_400_barnas_fertility_hdi,✓,Human_Development_Index @ 0.86,Variable_X->Variable_Y (100%),Variable_Y->Variable_X (100%),100%
+11,capped_400_fertilizer_crop_amount,✓,fertilizer_kg @ 160.00,Variable_Y->Variable_X (100%),Variable_X->Variable_Y (100%),100%
