@@ -172,7 +172,7 @@ original terms of the sources cited in the paper.
 
 - LOCI, Location-Scale Noise Models: <https://github.com/AlexImmer/loci>
 - ROCHE, robust causal discovery with Student's t-distribution: <https://github.com/quangdzuytran/ROCHE>
-- LCUBE, MDL-based causal discovery with cubic splines: <https://arxiv.org/abs/2509.00538>
+- LCUBE, MDL-based causal discovery with cubic splines: <https://github.com/LCube-Alg/LCube>
 - LiNGAM: <https://github.com/cdt15/lingam>
 
 ## REPOSITORY STRUCTURE
