@@ -4,8 +4,8 @@ services:
   causal-app:
     build: .
     ports:
-      - "${BIND_HOST:-127.0.0.1}:${STREAMLIT_HOST_PORT:-8501}:8501"  # Streamlit
-      - "${BIND_HOST:-127.0.0.1}:${FASTAPI_HOST_PORT:-8000}:8000"  # FastAPI
+      - "127.0.0.1:8501:8501"  # Streamlit, localhost only; expose through Nginx
+      - "127.0.0.1:8000:8000"  # FastAPI, localhost only
     environment:
       - PYTHONPATH=/app
       - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}

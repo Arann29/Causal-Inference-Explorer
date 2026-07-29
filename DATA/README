@@ -7,9 +7,7 @@ experiments, together with their regime metadata.
 
 - custom_pairs/
   Bivariate datasets used by the app. Each file holds two numeric columns
-  (the variable pair). Files prefixed with "capped_400_" are sample-capped
-  variants (up to 400 rows per regime) used for the fair-comparison
-  experiments with LLMs.
+  (the variable pair).
 
 - pairmeta_with_ground_truth.txt
   Regime and ground-truth metadata for every pair. Each row specifies the
